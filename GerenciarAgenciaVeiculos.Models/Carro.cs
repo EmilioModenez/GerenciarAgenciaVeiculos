@@ -9,19 +9,15 @@ namespace GerenciarAgenciaVeiculos.Models
     public class Carro
     {
         [Key]
-        public string Placa { get; set; }
-
-        public string Marca { get; set; }
-
-        public string Modelo { get; set; }
-
-        public string Combustivel { get; set; }
-        public int AnoFabricacao { get; set; }
-
+        public int Id { get; set; }
         public int AnoModelo { get; set; }
-
+        public int AnoFabricacao { get; set; }
+        public string Placa { get; set; }
+        public string Chassi { get; set; }
+        public string Marca { get; set; }
+        public string Modelo { get; set; }
+        public string Combustivel { get; set; }
         public string QuantidadePortas { get; set; }
         public int CilindradaMotor { get; set; }
-        public int MyProperty { get; set; }
     }
 }

@@ -1,6 +1,8 @@
+using GerenciarAgenciaVeiculos.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,6 +26,11 @@ namespace GerenciarAgenciaVeiculos
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            // Add framework services.
+            services.AddDbContext<GerenciarVeiculosContext>();
+
+            //services.AddScoped<IBloggerRepository, BloggerRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

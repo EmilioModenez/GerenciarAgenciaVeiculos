@@ -11,6 +11,8 @@ namespace GerenciarAgenciaVeiculos.Models
         public int Id { get; set; }
         public string Tipo { get; set; }
         public string DDD { get; set; }
+        [Display(Name = "Telefone")]
+        [DataType(DataType.PhoneNumber)]
         public string NumeroTelefone { get; set; }
 
     }
