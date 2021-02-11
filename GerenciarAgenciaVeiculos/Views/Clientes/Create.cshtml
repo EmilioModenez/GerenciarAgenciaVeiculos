@@ -27,33 +27,44 @@
                 <input asp-for="Rg" class="form-control" />
                 <span asp-validation-for="Rg" class="text-danger"></span>
             </div>
-            
+
             <div class="form-group">
                 <label asp-for="DataNascimento" class="control-label"></label>
                 <input asp-for="DataNascimento" class="form-control" />
                 <span asp-validation-for="DataNascimento" class="text-danger"></span>
             </div>
-            <h2>ENDEREÇO</h2>
-            <div class="form-group">
-                <label asp-for="Enderecos.Logradouro" class="control-label"></label>
-                <input asp-for="Enderecos.Logradouro" class="form-control" />
-                <span asp-validation-for="Enderecos.Logradouro" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Enderecos.Bairro" class="control-label"></label>
-                <input asp-for="Enderecos.Bairro" class="form-control" />
-                <span asp-validation-for="Enderecos.Bairro" class="text-danger"></span>
-            </div>
-            <h2>TELEFONE</h2>
+            @foreach (var endereco in Model.Enderecos)
+            {
+                int i = 1;
 
-            <div class="form-group">
-                <label asp-for="Telefones.NumeroTelefone" class="control-label"></label>
-                <input asp-for="Telefones.NumeroTelefone" class="form-control" />
-                <span asp-validation-for="Telefones.NumeroTelefone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
+                <h2>ENDEREÇO @i</h2>
+                <div class="form-group">
+                    <label asp-for="@endereco.Logradouro" class="control-label"></label>
+                    <input asp-for="@endereco.Logradouro" class="form-control" />
+                    <span asp-validation-for="@endereco.Logradouro" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@endereco.Bairro" class="control-label"></label>
+                    <input asp-for="@endereco.Bairro" class="form-control" />
+                    <span asp-validation-for="@endereco.Bairro" class="text-danger"></span>
+                </div>
+            }
+
+            @foreach (var telefone in Model.Telefones)
+            {
+                int i = 1;
+                <h2>TELEFONE @i</h2>
+
+                <div class="form-group">
+                    <label asp-for="@telefone.NumeroTelefone" class="control-label"></label>
+                    <input asp-for="@telefone.NumeroTelefone" class="form-control" />
+                    <span asp-validation-for="@telefone.NumeroTelefone" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            }
+
         </form>
     </div>
 </div>
